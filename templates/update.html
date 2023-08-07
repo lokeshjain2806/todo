@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Update Data {% endblock title %}
+{% block content %}
+    <h3 style="text-align:center;"> Update Data </h3>
+<table style="text-align:center;display: flex;justify-content: center;align-items: center;">
+    {% if retrieve_data %}
+        <tr>
+            <th style="border: 1px solid black; ">Id</th>
+            <th style="border: 1px solid black; ">Name</th>
+            <th style="border: 1px solid black;">Fathers Name</th>
+            <th style="border: 1px solid black;">Email Id</th>
+            <th style="border: 1px solid black;">Contact Number</th>
+            <th style="border: 1px solid black;">Address</th>
+            <th style="border: 1px solid black;">Update Data</th>
+        </tr>
+    {% for data in retrieve_data %}
+        <tr>
+            <td style="border: 1px solid black;">{{ data.id }}</td>
+            <td style="border: 1px solid black;">{{ data.Name }}</td>
+            <td style="border: 1px solid black;">{{ data.Fathers_Name }}</td>
+            <td style="border: 1px solid black;">{{ data.Email_Id }}</td>
+            <td style="border: 1px solid black;">{{ data.Contact_No }}</td>
+            <td style="border: 1px solid black;">{{ data.Address }}</td>
+            <td style="border: 1px solid black;"><button type="submit" style="border: 1px solid black;"><a href="{% url 'updatedetails' data.id %}" style="color:black;text-decoration: none;">Update Data</a></button></td>
+        </tr>
+    {% endfor %}
+    {% else %}
+        <h4>No data found</h4>
+    {% endif %}
+    </table>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Update Details {% endblock title %}
+{% block content %}
+    <h3 style="text-align:center;margin-bottom:10%;">Update Details Of Id : {{id}}</h3>
+    <form action="" method="POST" style="text-align:center;">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Update Data">
+    </form>
+
+
+{% endblock content %}

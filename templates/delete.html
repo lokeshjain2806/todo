@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %} Delete Data {% endblock title %}
+{% block content %}
+    <h3 style="text-align:center;"> Delete Data </h3>
+<table style="text-align:center;display: flex;justify-content: center;align-items: center;">
+    {% if retrieve_data %}
+        <tr>
+            <th style="border: 1px solid black; ">Id</th>
+            <th style="border: 1px solid black; ">Name</th>
+            <th style="border: 1px solid black;">Fathers Name</th>
+            <th style="border: 1px solid black;">Email Id</th>
+            <th style="border: 1px solid black;">Contact Number</th>
+            <th style="border: 1px solid black;">Address</th>
+            <th style="border: 1px solid black;">Delete Data</th>
+        </tr>
+    {% for data in retrieve_data %}
+        <tr>
+            <td style="border: 1px solid black;">{{ data.id }}</td>
+            <td style="border: 1px solid black;">{{ data.Name }}</td>
+            <td style="border: 1px solid black;">{{ data.Fathers_Name }}</td>
+            <td style="border: 1px solid black;">{{ data.Email_Id }}</td>
+            <td style="border: 1px solid black;">{{ data.Contact_No }}</td>
+            <td style="border: 1px solid black;">{{ data.Address }}</td>
+            <td style="border: 1px solid black;">
+            <form action="{% url 'deleteid' data.id %}">
+                    <input type="submit" value="Delete">
+            </form>
+            </td>
+        </tr>
+    {% endfor %}
+    {% else %}
+        <h4>No data found</h4>
+    {% endif %}
+    </table>
+{% endblock content %}

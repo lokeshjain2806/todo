@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Create Data {% endblock title %}
+{% block content %}
+    <form action="" method="POST" style="margin-top:10%;display: flex; flex-direction: column; align-items: center;">{% csrf_token %}
+        {{form.as_p}}
+        <input type="Submit" value="Submit">
+    </form>
+
+{% endblock content %}

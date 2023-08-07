@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Home {% endblock title %}</title>
+</head>
+<body style=" background-color: lightgreen;">
+    <h1 style="text-align:center;margin-top: 100px;color: red;background-color: khaki;">Todo Task</h1>
+    {% block content %}
+    <div style="text-align:end;">
+        <button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
+         <a href="{% url 'userlogout' %}" style="color:black;text-decoration: none;">Logout</a>
+    </button>
+    </div>
+        <p style="text-align:center;margin-top: 15%;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
+         <a href="{% url 'create' %}" style="color:black;text-decoration: none;">Create Data</a>
+    </button></p>
+    <p style="text-align:center;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
+         <a href="{% url 'show' %}" style="color:black;text-decoration: none;">Read Data</a>
+    </button></p>
+    <p style="text-align:center;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
+         <a href="{% url 'update' %}" style="color:black;text-decoration: none;">Update Data</a>
+    </button></p>
+    <p style="text-align:center;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
+         <a href="{% url 'deletedata' %}" style="color:black;text-decoration: none;">Delete Data</a>
+    </button></p>
+
+    {% endblock content %}
+</body>
+</html>
