@@ -19,9 +19,11 @@
     <p style="text-align:center;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
          <a href="{% url 'show' %}" style="color:black;text-decoration: none;">Read Data</a>
     </button></p>
+    {% if perms.conf.can_view_email_id %}
     <p style="text-align:center;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
          <a href="{% url 'update' %}" style="color:black;text-decoration: none;">Update Data</a>
     </button></p>
+    {% endif %}
     <p style="text-align:center;"><button style="width: 150px;height: 50px;padding: 10px 20px;font-size: 16px;">
          <a href="{% url 'deletedata' %}" style="color:black;text-decoration: none;">Delete Data</a>
     </button></p>

@@ -20,14 +20,15 @@ from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.signin ,name='signin'),
-    path('home/', views.home , name='home'),
-    path('home/create/', views.create, name='create'),
-    path('home/show/', views.show, name='show'),
-    path('home/update/', views.update, name='update'),
-    path('home/delete/', views.deletedata, name='deletedata'),
-    path('home/deleteid/<int:id>/', views.deleteid, name='deleteid'),
-    path('home/update/<int:id>/', views.updatedetails, name='updatedetails'),
-    path('logout/',views.user_logout, name ='userlogout'),
-    path('signup',views.sign_up, name='sign_up'),
+    path('', views.SignIn.as_view() ,name='signin'),
+    path('signup',views.SignUp.as_view(), name='sign_up'),
+    path('home/', views.Home.as_view() , name='home'),
+    path('home/create/', views.Create.as_view(), name='create'),
+    path('home/show/', views.Show.as_view(), name='show'),
+    path('home/update/', views.Update.as_view(), name='update'),
+    path('home/update/<int:id>/', views.UpdateDetails.as_view(), name='updatedetails'),
+    path('home/delete/', views.DeleteDataView.as_view(), name='deletedata'),
+    path('home/deleteid/<int:id>/', views.DeleteDetails.as_view(), name='deleteid'),
+    path('logout/',views.UserLogout.as_view(), name ='userlogout'),
+
 ]
